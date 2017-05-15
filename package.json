@@ -1,0 +1,66 @@
+{
+  "name": "contact-service",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Jenius Pair Programming Interview Contact Service",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node -- app/index.js",
+    "start:debug": "babel-node --inspect -- app/index.js",
+    "clean": "yarn cache clean && npm cache clean && rm -fr node_modules",
+    "test": "NODE_ENV=test mocha --compilers js:babel-core/register ./test/**/*.spec.js",
+    "test:debug": "NODE_ENV=test mocha --compilers js:babel-core/register --debug-brk --inspect ./test/**/*.spec.js",
+    "dev": "NODE_ENV=development nodemon .",
+    "windev": "set NODE_ENV=development && npm run nodemon",
+    "nodemon": "nodemon --exec babel-node --inspect -- .",
+    "cov": "nyc --report-dir ./artifacts/coverage --reporter=html --reporter=text --reporter=lcov _mocha --compilers js:babel-core/register ./test/**/*.spec.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "author": "Jenius",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.1.8",
+    "babel-register": "6.24.1",
+    "backpack-core": "^0.3.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "eslint": "^3.16.0",
+    "eslint-config-airbnb-base": "^11.1.2",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "4.2.2",
+    "eslint-plugin-security": "1.3.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.1.2",
+    "sinon": "2.2.0",
+    "supertest": "^3.0.0"
+  },
+  "dependencies": {
+    "boom": "^4.3.1",
+    "bunyan": "^1.8.10",
+    "good": "^7.1.0",
+    "good-bunyan": "^1.3.0",
+    "hapi": "^16.1.0",
+    "hapi-api-version": "^1.3.0",
+    "hapi-swagger": "^7.6.0",
+    "inert": "^4.1.0",
+    "joi": "^10.2.2",
+    "vision": "^4.1.1",
+    "winston": "^2.3.1"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js",
+      "test/"
+    ]
+  },
+  "engines": {
+    "node": ">= 6.10"
+  }
+}

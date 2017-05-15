@@ -1,0 +1,6 @@
+# Node modules in the test-client
+test-client/node_modules
+node_modules/
+artifacts/
+.nyc_output/
+.git/
