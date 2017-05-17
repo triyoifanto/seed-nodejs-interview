@@ -6,9 +6,9 @@ const internals = {};
 
 internals.applyRoutes = (server, next) => {
 
-  server.route([
-    contacts
-  ]);
+  server.route(
+    contacts     
+  );
 
   next();
 };
